@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div id="scene-container"></div>
+
+    <!-- Intro Page -->
+<section class="hero">
+  <div>
+    <h1 class="name">AHMAD<br>LEO</h1>
+    <p class="title">Python Developer | Software Engineer | AI/ML  | SQL </p>
+  </div>
+</section>
+
+       <!-- About Me -->
+<!-- About Me -->
+<section class="section" id="about">
+  <div class="card" style="max-width: 900px; text-align: center; padding: 2rem;">
+
+    <img src="static/Goku.jpg" alt="Ahmad Leo"
+      style="width: 180px; height: 180px; border-radius: 50%; margin-bottom: 1rem; object-fit: cover; border: 2px solid #00eeff;" />
+
+    <h2 style="margin-bottom: 1rem;">👋 About Me</h2>
+    <p style="font-size: 1rem; line-height: 1.7; max-width: 700px; margin: 0 auto;">
+      I'm <strong>Ahmad Leo</strong>, a Computer Science student at FAST NUCES and a dedicated <strong>Python Developer</strong> and <strong>Full Stack Engineer</strong> with hands-on experience in Flask-based applications, AI integrations, and automation tools. Through 3+ internships and 25+ GitHub projects, I’ve developed intelligent solutions including chatbots, voice-enabled apps, and RESTful systems.
+      <br><br>
+      I'm currently expanding my skills in <strong>Machine Learning and Artificial Intelligence</strong>, focusing on building smart, data-driven systems. I'm passionate about combining <strong>speech recognition, dynamic UI design, and backend logic</strong> to create modern, responsive, and user-focused applications.
+    </p>
+
+    <div class="stats" style="display: flex; justify-content: center; gap: 3rem; margin-top: 3rem; flex-wrap: wrap;">
+      <div class="stat">
+        <div class="stat-number">25+</div>
+        <div>GitHub Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">3+</div>
+        <div>Internships Completed</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number">10+</div>
+        <div>Tech Stack Mastery</div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+  </div>
+</section>
+
+    <div style="display: flex; justify-content: center; margin-top: 2rem;">
+  <a href="https://docs.google.com/document/d/1mIePPV_8crJn5HZy-e9w3woC1_ZR3gpy/edit" download class="btn" 
+     style="padding: 0.75rem 1.5rem; background-color: #00eeff; color: #000; border: none; border-radius: 5px; text-decoration: none; font-weight: bold;">
+    📄 Download Resume
+  </a>
+</div>
+
+<!-- Experience -->
+<section class="section" id="experience">
+  <div class="card" style="max-width: 900px; text-align: center;">
+    <h2 style="margin-bottom: 2rem;">💼 Experience</h2>
+    <div class="cert-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+
+      <!-- Elevvo Pathways -->
+      <div class="cert-card">
+      
+        <div>
+          <h4>Data Analyst Intern</h4>
+          <p>Elevvo Pathways | Jul 2025 – Present · Remote</p>
+          <p style="font-size: 0.9rem;">
+            🔍 Performed data analysis using Python and SQL.<br>
+            📈 Built dashboards in Power BI / Tableau.<br>
+            🧠 Analyzed customer & market behavior.<br>
+            🗂️ Automated data workflows.<br>
+            🤝 Collaborated with cross-functional teams.<br>
+            📝 Documented best practices and insights.
+          </p>
+        </div>
+      </div>
+
+      <!-- Oasis Infobyte -->
+      <div class="cert-card">
+        <div>
+          <h4>Python Developer Intern</h4>
+          <p>Jul 2025 · Remote</p>
+          <p style="font-size: 0.9rem;">
+            ✅ Built CLI tools & automation scripts.<br>
+            🔧 Improved code structure, testing, and documentation.<br>
+            💬 Gained real-world feedback from mentors.
+          </p>
+        </div>
+      </div>
+
+      <!-- Codveda Technologies -->
+      <div class="cert-card">
+        <div>
+          <h4>Python Developer Intern</h4>
+          <p>Jul 2025 · Remote</p>
+          <p style="font-size: 0.9rem;">
+            🛠️ Contributed to backend systems.<br>
+            🧠 Applied modular design & debugging techniques.<br>
+            💬 Worked in agile sprints with code reviews.
+          </p>
+        </div>
+      </div>
+
+      <!-- CodeAlpha -->
+      <div class="cert-card">
+        <div>
+          <h4>Python Developer Intern</h4>
+          <p>Jun – Jul 2025 · Remote</p>
+          <p style="font-size: 0.9rem;">
+            🔹 Enhanced core Python & OOP design.<br>
+            🔹 Optimized logic and debugging practices.<br>
+            🔹 Improved collaboration & delivery.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Projects -->
+<section class="section" id="work">
+  <div class="grid">
+     <div class="card">
+      <div class="project-image"></div>
+      <h3>AstroHub</h3>
+      <p>A GitHub-style portfolio platform with secure authentication, project showcasing, and downloadable resources. Built using Flask and SQLAlchemy.</p>
+      <a href="https://github.com/Ahmadleo-tech/AstroHub" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <div class="project-image"></div>
+      <h3>Google Drive (DSA Project)</h3>
+      <p>A C++ project simulating Google Drive using core Data Structures & Algorithms, applying complete DSA concepts.</p>
+      <a href="https://github.com/Ahmadleo-tech/Google-Drive" class="btn">View Project</a>
+    </div>
+
+    <div class="card">
+      <div class="project-image"></div>
+      <h3>Student Assistant</h3>
+      <p>An AI-powered assistant that helps students with voice-based search, note-taking, content access, and task handling.</p>
+      <a href="https://github.com/Ahmadleo-tech/Student-Assistant-Helper-" class="btn">View Project</a>
+    </div>
+</section>
+
+<!-- Skills -->
+   <section class="section" id="tech-stack">
+  <div class="card" style="text-align: center;">
+    <h2 style="margin-bottom: 2rem;">My Skills</h2>
+    <div class="skills" style="
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    ">
+      <!-- Languages -->
+      <div class="skill tech-skill">Python</div>
+      <div class="skill tech-skill">C++</div>
+      <div class="skill tech-skill">JavaScript</div>
+      <div class="skill tech-skill">HTML5</div>
+      <div class="skill tech-skill">CSS3</div>
+      <div class="skill tech-skill">SQL</div>
+
+      <!-- Frameworks & Libraries -->
+      <div class="skill tech-skill">Flask</div>
+      <div class="skill tech-skill">Bootstrap</div>
+      <div class="skill tech-skill">SQLAlchemy</div>
+      <div class="skill tech-skill">Flask-Login</div>
+      <div class="skill tech-skill">Jinja2</div>
+      <div class="skill tech-skill">Flask-Migrate</div>
+
+      <!-- AI/ML & Data -->
+      <div class="skill tech-skill">Speech Recognition</div>
+      <div class="skill tech-skill">Text-to-Speech</div>
+      <div class="skill tech-skill">NLP</div>
+      <div class="skill tech-skill">NumPy</div>
+      <div class="skill tech-skill">Pandas</div>
+
+      <!-- Tools -->
+      <div class="skill tech-skill">Git</div>
+      <div class="skill tech-skill">GitHub</div>
+      <div class="skill tech-skill">VS Code</div>
+      <div class="skill tech-skill">Visual Studio</div>
+      <div class="skill tech-skill">MySQL</div>
+    </div>
+  </div>
+</section>
+
+<!-- Education & Certifications -->
+<section class="section" id="certifications">
+  <div class="card" style="max-width: 900px; text-align: center;">
+    <h2 style="margin-bottom: 2rem;">🎓 Certifications & Education</h2>
+    <div class="cert-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+      
+      <!-- BS Computer Science -->
+      <div class="cert-card">
+        <img src="static/p1.webp" alt="FAST NUCES" class="cert-logo">
+        <div>
+          <h4>B.S. Computer Science</h4>
+          <p>FAST NUCES (2023 - 2027)</p>
+        </div>
+      </div>
+
+      <!-- FSc Pre-Engineering -->
+      <div class="cert-card">
+        <img src="static/pg.webp" alt="Punjab Group of Colleges" class="cert-logo">
+        <div>
+          <h4>FSc Pre-Engineering</h4>
+          <p>Punjab Group of Colleges (Grade: A)</p>
+        </div>
+      </div>
+
+      <!-- Python for Everybody -->
+      <div class="cert-card">
+        <img src="static/h1.jpeg" alt="Coursera" class="cert-logo">
+        <div>
+          <h4>Python for Everybody</h4>
+          <p>University of Michigan · Coursera</p>
+        </div>
+      </div>
+
+      <!-- Web Development Bootcamp -->
+      <div class="cert-card">
+        <img src="static/g1.webp" alt="GreatLearning" class="cert-logo">
+        <div>
+          <h4>Web Development Bootcamp</h4>
+          <p>Udemy</p>
+        </div>
+      </div>
+
+      <!-- Flask Course -->
+      <div class="cert-card">
+        <img src="static/yt.webp" alt="YouTube / freeCodeCamp" class="cert-logo">
+        <div>
+          <h4>Flask Framework</h4>
+          <p>freeCodeCamp.org (2025)</p>
+        </div>
+      </div>
+
+      <!-- Speech Recognition -->
+      <div class="cert-card">
+        <img src="static/g1.webp" alt="Great Learning" class="cert-logo">
+        <div>
+          <h4>Speech Recognition with Python</h4>
+          <p>Great Learning</p>
+        </div>
+      </div>
+
+      <!-- NumPy Introduction -->
+      <div class="cert-card">
+        <img src="static/g1.webp" alt="Simplilearn" class="cert-logo">
+        <div>
+          <h4>Introduction to NumPy</h4>
+          <p>Simplilearn</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+     <!-- Apps  -->
+    
+     <section class="section" id="work">
+        <div class="grid">
+            <div class="card">
+                <div class="project-image"></div>
+                <h3>GitHub</h3>
+                <p>Explore my open-source projects and code on GitHub.</p>
+                <a href="https://github.com/Ahmadleo-tech" class="btn">View GitHub</a>
+            </div>
+            <div class="card">
+                <div class="project-image"></div>
+                <h3>FaceBook</h3>
+                <p>Connect with me professionally on LinkedIn.</p>
+                <a href="https://FaceBook.com/Ahmadleo" class="btn">View FaceBook</a>
+            </div>
+            <div class="card">
+                <div class="project-image"></div>
+                <h3>Linked In</h3>
+                <p>Follow me on Facebook to see updates and share ideas.</p>
+                <a href="https://linkedIn.com/Ahmadleo" class="btn">View LinkedIn</a>
+            </div>
+        </div>
+    </section>
+
+  <!-- Send Message -->
+<section class="section" id="contact">
+  <div class="contact-form card">
+    <h2>Get in Touch</h2>
+    <form action="/contact" method="POST">
+      <input type="text" class="input" name="name" placeholder="Name" required>
+      <input type="email" class="input" name="email" placeholder="Email" required>
+      <textarea class="input" name="message" rows="5" placeholder="Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+    <footer style="text-align: center; padding: 1rem 0; font-size: 0.8rem; color: gray;">
+        &copy; 2025 Ahmad Leo — Connect on Linked In & GitHub Too
+    </footer>
+
+
+    <script src="static/js/script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
