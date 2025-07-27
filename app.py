@@ -6,62 +6,52 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Load parameters from JSON file with error handling
+# Load config from JSON (relative path for deployment)
+config_path = os.path.join(os.path.dirname(__file__), 'confij.json')
+parame = {}
+
 try:
-    config_path = r'D:\Portfolio App\confij.json'
     with open(config_path, 'r') as c:
-        parame = json.load(c)["parame"]
-except FileNotFoundError:
-    print("Error: confij.json file not found!")
-    print("Please create the config file with Gmail credentials")
-    exit(1)
-except KeyError:
-    print("Error: 'parame' key not found in config file!")
-    exit(1)
-except json.JSONDecodeError:
-    print("Error: Invalid JSON format in config file!")
-    exit(1)
+        parame = json.load(c).get("parame", {})
+except Exception as e:
+    print(f"[Config Error] {str(e)}")
 
-local_server = True
-app.secret_key = 'nsluvurhozqetrxz'  # Consider using environment variable
+# Secret key
+app.secret_key = os.environ.get("FLASK_SECRET_KEY", "default-secret-key")
 
-# ✅ Mail configuration with error handling
+# Mail Configuration
 try:
     app.config.update(
         MAIL_SERVER='smtp.gmail.com',
         MAIL_PORT=465,
         MAIL_USE_SSL=True,
-        MAIL_USERNAME=parame['Gmail_User'],
-        MAIL_PASSWORD=parame['pass']
+        MAIL_USERNAME=parame.get('Gmail_User'),
+        MAIL_PASSWORD=parame.get('pass')
     )
-except KeyError as e:
-    print(f"Error: Missing key in config: {e}")
-    exit(1)
+    mail = Mail(app)
+except Exception as e:
+    print(f"[Mail Config Error] {str(e)}")
 
-mail = Mail(app)
-
+# Routes
 @app.route('/')
 def home():
     return render_template('index.html')
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    # Get form data with validation
     name = request.form.get('name', '').strip()
     email = request.form.get('email', '').strip()
     message = request.form.get('message', '').strip()
-    
+
     # Basic validation
     if not all([name, email, message]):
         flash("All fields are required!", "danger")
         return redirect('/')
     
-    # Basic email validation
     if '@' not in email or '.' not in email.split('@')[-1]:
         flash("Please enter a valid email address!", "danger")
         return redirect('/')
     
-    # Length validation
     if len(name) > 100 or len(email) > 100 or len(message) > 1000:
         flash("Input too long! Please keep fields within reasonable limits.", "danger")
         return redirect('/')
@@ -69,22 +59,19 @@ def contact():
     try:
         msg = Message(
             subject=f"New Message from {name}",
-            sender=parame['Gmail_User'],
-            recipients=[parame['Gmail_User']],
+            sender=parame.get('Gmail_User'),
+            recipients=[parame.get('Gmail_User')],
             body=f"Name: {name}\nEmail: {email}\nTime: {datetime.now()}\n\nMessage:\n{message}"
         )
-        
         mail.send(msg)
         flash("Message sent successfully!", "success")
-        
     except Exception as e:
-        # Log the error for debugging
-        print(f"Mail error: {str(e)}")
+        print(f"[Mail Send Error] {str(e)}")
         flash("Message failed to send. Please try again later.", "danger")
 
     return redirect('/')
 
-# Error handlers
+# Error Handlers
 @app.errorhandler(404)
 def not_found(error):
     return render_template('404.html'), 404
@@ -93,8 +80,6 @@ def not_found(error):
 def internal_error(error):
     return render_template('500.html'), 500
 
-# if __name__ == "__main__":
-#     app.run(debug=True)
-
+# Don't run app here in production — WSGI server handles it (e.g., on PythonAnywhere)
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
