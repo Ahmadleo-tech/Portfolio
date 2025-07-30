@@ -80,6 +80,4 @@ def not_found(error):
 def internal_error(error):
     return render_template('500.html'), 500
 
-# Don't run app here in production — WSGI server handles it (e.g., on PythonAnywhere)
-if __name__ == "__main__":
-    app.run(debug=True)
+# Don't run app here in production — WSGI server handles it (e.g., on PythonAnywhereue)
